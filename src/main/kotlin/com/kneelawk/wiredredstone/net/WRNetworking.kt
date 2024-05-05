@@ -7,6 +7,7 @@ import com.kneelawk.wiredredstone.WRLog
 import com.kneelawk.wiredredstone.config.CommonConfig
 import com.kneelawk.wiredredstone.config.SyncPhase
 import com.kneelawk.wiredredstone.mixin.api.NetworkHelper
+import com.kneelawk.wiredredstone.part.AbstractCenterConnectablePart
 import com.kneelawk.wiredredstone.part.AbstractConnectablePart
 import com.kneelawk.wiredredstone.screenhandler.RedstoneAssemblerScreenHandler
 import io.netty.handler.codec.DecoderException
@@ -32,6 +33,7 @@ object WRNetworking {
 
     fun init() {
         AbstractConnectablePart.initNetworking()
+        AbstractCenterConnectablePart.initNetworking()
         RedstoneAssemblerScreenHandler.initNetworking()
 
         if (CommonConfig.local.syncEnabled) {
